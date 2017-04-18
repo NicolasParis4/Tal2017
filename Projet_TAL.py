@@ -11,10 +11,13 @@ from nltk.text import Text
 import re
 import sys
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 #NB : utiliser seulement corpus.txt, c'est le seul fichier encodé correctement
 
 #Importation du fichier :
-#os.chdir("/home/lucille/Bureau/TAL")
+os.chdir("/Users/workplace/Documents/Tal2017")
 with open('corpus.txt', 'r') as f:
     sample = f.read()
 
@@ -30,3 +33,4 @@ print("Le fichier contient "+str(len(liste))+" mots.\n")
 #Exécution d'une fonction de concordance : 
 liste=Text(liste)
 liste.concordance("murder")
+
