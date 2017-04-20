@@ -79,9 +79,12 @@ killer1.extend(rampage2)
 
 print(killer1)
 
-killer1=str(killer1)
+for mot in killer1:
+    fichier.write(mot+' ')
 
-fichier.write(killer1)
+#killer1=str(killer1)
+
+#fichier.write(killer1)
 fichier.close()
 
 #Fonction qui permet de récupérer les lemmes de tous les hypernymes d'un synset
@@ -105,5 +108,5 @@ def get_hyponyms(synset):
 #print(killer4)
 
 #récupérer les objets d'une liste wordNet
-for lettre in killer1:
-    print(killer1)
+#for lettre in killer1:
+    #print(killer1)
