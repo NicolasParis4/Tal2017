@@ -16,8 +16,8 @@ import pickle
 
 
 #Importation du corpus (n'oubliez pas de modifier votre chemin) :
-os.chdir("/home/lucille/Tal2017")
-with open('Corpus_2.txt', 'r') as c:
+os.chdir("C:\\Users\\hishe\\OneDrive\\Documents\\GitHub\\Tal2017")
+with open('Corpus_2.txt', 'r',encoding="utf8") as c:
     corpus = c.read()
 
 corpus_1=''
@@ -29,9 +29,11 @@ for mot in corpus:
 tokenizer_W2 = TreebankWordTokenizer()
 tokens_W=tokenizer_W2.tokenize(corpus_1)
 
+print(nltk.ne_chunk(tokens_W))
+
 #Tokenization en phrases
-tokenizer_P=nltk.data.load('tokenizers/punkt/PY3/english.pickle')
-tokens_P=tokenizer_P.tokenize(corpus_1)
+#tokenizer_P=nltk.data.load('tokenizers/punkt/PY3/english.pickle')
+#tokens_P=tokenizer_P.tokenize(corpus_1)
 
 
 
