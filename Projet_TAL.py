@@ -17,7 +17,6 @@ from nltk.corpus import stopwords
 import string
 import pickle
 
-#NB : utiliser seulement corpus.txt, c'est le seul fichier encodé correctement
 
 #Importation du corpus (n'oubliez pas de modifier votre chemin) :
 os.chdir("/home/lucille/Tal2017")
@@ -69,7 +68,7 @@ for phrase in tokens_P:
 
 #fonction recherche/impression de phrase
 #elle retourne la phrase (du corpus) qui contient le mot keyWords en paramètre
-#ATTENTION pour l'utiliser, le keyWord doit être une string et le corpus doit être segmenté à phrase ! 
+#ATTENTION pour l'utiliser, le keyWord doit être une string et le corpus doit être segmenté en phrase ! 
 def recherche(corpus,keyWord):
         for phrase in corpus:
             if(phrase.find(keyWord, 0)!=-1):
@@ -88,8 +87,9 @@ def generateur_corpus2(corpus, liste):
             resultat.append(phrase)
     return resultat
 
-expression = r"^0[0-9]([ .-]?[0-9]{2}){4}$"
-re.search(expression, chaine)
+#Essai : 
+#expression = r"^0[0-9]([ .-]?[0-9]{2}){4}$"
+#re.search(expression, chaine)
 
 corpus3=generateur_corpus2(corpus2,tokens_lexique)
 corpus3=str(corpus3)
@@ -144,25 +144,3 @@ tokens_W=tokenizer_W.tokenize(sample)
 
 
 
-#Test sans ponctuation :
-#print("Message2")
-bla="J'aime les confitures. C'est très bon."
-tokens_P1=tokenizer_P.tokenize(bla)
-#print(tokens_P1)
-bla3=[]
-for phrase in tokens_P1:
-    bla2=phrase.strip(string.punctuation)
-    bla3.append(bla2)
-#print(bla3)
-
-#print("Message 3")
-#print(recherche(bla3,"bon"))
-liste=["confitures", "poisson", "monstre", "bon"]
-test=[]
-resultat2=[]
-for mot in liste:
-    test=recherche(bla3,mot)
-    print(test+" len("+str(len(test))+")")
-    if(len(test)>0):
-        resultat2.append(test)
-#print(resultat2)
